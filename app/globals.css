@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.container {
+	@apply max-w-[1000px] md:max-w-[720px] lm:max-w-[960px] lx:max-w-[540px] mx-auto w-full;
+}
+
+.btn {
+	@apply rounded-[36px] py-[13.5px] px-[29px] w-[150px];
+}
+
+.overlay {
+	@apply grid z-10 place-items-center bg-black bg-opacity-25 fixed left-0 top-0 w-full h-full ;
+}
+
+.css-1u9des2-indicatorSeparator {
+	@apply hidden;
+}
