@@ -2,7 +2,6 @@
 import { Dispatch, FC, SetStateAction, useState } from "react";
 import DeletePopup from "./delete-popup";
 import Link from "next/link";
-
 import { HiOutlineTrash } from "react-icons/hi";
 type Props = {
   title: string;
@@ -11,12 +10,19 @@ type Props = {
   setSucces: Dispatch<SetStateAction<boolean>>;
 };
 
+
+
+
 const ActivityCard: FC<Props> = ({ title, date, id, setSucces }) => {
   const [deletePopup, setDeletePopup] = useState(false);
 
   function formatDate(inputDate : string) {
     const newdate = new Date(inputDate);
-    const options = { month: "long", day: "numeric", year: "numeric" };
+	const options: Intl.DateTimeFormatOptions = {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric'
+	  };
 	const formattedDate = new Intl.DateTimeFormat('en-GB', options).format(newdate);
 
     return formattedDate;
